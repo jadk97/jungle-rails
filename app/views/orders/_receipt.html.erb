@@ -1,17 +1,16 @@
 <tr>
     <td>
-    <% @order_items = Product.find_by(id: orders[0]["product_id"]) %>
-    <%= image_tag @order_items.image.tiny %>
+    <%= image_tag order.product.image.tiny %>
     </td>
     <td>
-    <h4><%= @order_items.name %></h4>
+    <h4><%= order.product.name %></h4>
     <br>
-    <p><%= @order_items.description %><p>
+    <p><%= order.product.description %><p>
     </td>
     <td>
-      <%= orders[0]["quantity"] %>
+      <%= order.quantity %>
     </td>
     <td>
-     <%= orders[0]["total_price_cents"]/100.0 %>
+     <%= humanized_money_with_symbol order.total_price_cents/100.0 %>
     </td>
 </tr>
