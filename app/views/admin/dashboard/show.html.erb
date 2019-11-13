@@ -1,2 +1,4 @@
 <h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h2>You have <%= @products.count %> products spanning across <%= @products.distinct.count('category_id') %> categories.</h2>  
+
+  
