@@ -28,7 +28,7 @@
       <%= orders[0]["quantity"] %>
     </td>
     <td>
-     $<%= orders[0]["total_price_cents"]/100.0 %>
+     <%= humanized_money_with_symbol orders[0]["total_price_cents"]/100.0 %>
     </td>
     </tr>
     <% end %>
@@ -40,7 +40,7 @@
         TOTAL:
       </th>
       <th>
-      $<%= @order.total_cents/100.0 %>
+      <%= humanized_money_with_symbol @order.total_cents/100.0 %>
       </th>
     </tr>
   </tfoot>
