@@ -18,7 +18,7 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
     end
   end
 
-  scenario "They see all products" do
+  scenario "They see all products and add one of the products to their cart" do
     # ACT
     visit root_path
 
