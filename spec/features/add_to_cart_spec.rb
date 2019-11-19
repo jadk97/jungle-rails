@@ -18,16 +18,15 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
     end
   end
 
-  scenario "They click on a product details button" do
+  scenario "They see all products" do
     # ACT
     visit root_path
 
-    click_link("Details", match: :first)
+    click_button("Add", match: :first)
     #  DEBUG
     
     # VERIFY
-    expect(current_path).to eql("/products/10")
     save_screenshot
-    expect(page).to have_css 'article.product-detail', count: 1
+    expect(page).to have_content("My Cart (1)")
   end
 end
